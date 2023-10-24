@@ -17,12 +17,12 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template('about.html', year=year)
+    return render_template('contact.html', year=year)
 
 
 @app.route("/identify")
 def identify():
-    return render_template('about.html', year=year)
+    return render_template('identify.html', year=year)
 
 
 if __name__ == "__main__":
