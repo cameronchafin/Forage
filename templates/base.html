@@ -9,7 +9,7 @@
         <title>{% block title %}{% endblock %} Forage</title>
 
         <!-- Favicon -->
-<!--        Do this later        -->
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
 
         <!-- Icons -->
         <script src="https://kit.fontawesome.com/1fc18f77e9.js" crossorigin="anonymous"></script>
@@ -32,7 +32,9 @@
         <!-- Nav bar -->
         <nav class="navbar navbar-expand-lg">
           <div class="container-md">
-            <span class="brand mb-0">Forage</span>
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Forage Logo" height="30">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <i class="button fas fa-bars"></i>
