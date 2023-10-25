@@ -3,7 +3,7 @@
 {% block content %}
 <!-- Banner -->
 <div class="container-fluid text-light p-5 jumbotron"
-style="background-image: url({{ url_for('static', filename='img/bg/home-bg.jpg') }})">
+style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg') }})">
     <div class="jumbo-overlay"></div>
     <div class="container p-5 d-flex align-items-center justify-content-center h-100">
       <div class="jumbo-title text-left">
@@ -12,7 +12,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/home-bg.jpg')
 
         <!-- Buttons  -->
         <a type="button" class="cta-btn btn custom btn-primary btn-md" href="{{ url_for('identify') }}">Identify</a>
-        <a type="button" class="cta-btn btn custom btn-secondary btn-md" href="{{ url_for('about') }}">Learn more</a>
+        <a type="button" class="cta-btn btn custom-outline" href="{{ url_for('about') }}">Learn more</a>
       </div>
     </div>
 </div>

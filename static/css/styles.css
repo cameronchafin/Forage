@@ -1,3 +1,8 @@
+.feature-icon {
+    padding-bottom: 20px;
+    color: #59a96a;
+}
+
 /* Headings */
 
 .big-heading {
@@ -47,4 +52,64 @@
 
 .jumbo-subheader {
     font-size: 1.1rem;
+}
+
+/* Navbar */
+
+.button {
+    color: #59a96a;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: #59a96a;
+}
+
+/* Buttons */
+
+.custom {
+    color: #fff;
+    background-color: #59a96a;
+    border-color: #59a96a;
+    font-weight: 600;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:hover, .custom:focus {
+    color: #fff;
+    background-color: #384d48;
+    border-color: #59a96a;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline {
+    color: #59a96a;
+    background-color: transparent;
+    background-image: none;
+    border-color: #59a96a;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:hover, .custom-outline:focus {
+    color: #fff;
+    background-color: #384d48;
+    border-color: #59a96a;
+    box-shadow: none;
+    -webkit-box-shadow: none
+}
+
+.custom-outline:active {
+    box-shadow: none;
+    -webkit-box-shadow: none
 }
