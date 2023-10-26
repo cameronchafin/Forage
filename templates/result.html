@@ -25,7 +25,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
 
                 <!-- Representative Image -->
                 {% if suggestion.similar_images %}
-                <img src="{{ suggestion.similar_images[0].url }}" alt="{{ suggestion.name }}" class="card-img-top mb-4">
+                <img src="{{ suggestion.similar_images[0].url }}" alt="{{ suggestion.name }}" class="card-img-top mb-4 representative-image">
                 {% else %}
                 <p>No representative image available.</p>
                 {% endif %}
@@ -43,18 +43,19 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
                 <p>No common names available.</p>
                 {% endif %}
 
-                <!-- Description -->
-                {% if suggestion.details.description %}
-                <p class="card-text"><strong>Description:</strong> {{ suggestion.details.description }}</p>
-                {% else %}
-                <p>No description available.</p>
-                {% endif %}
-
                 <!-- Edibility -->
                 {% if suggestion.details.edibility %}
                 <p class="card-text"><strong>Edibility:</strong> {{ suggestion.details.edibility }}</p>
                 {% else %}
                 <p>Edibility information not available.</p>
+                {% endif %}
+
+                <!-- Description -->
+                {% if suggestion.details.description %}
+                <p class="card-text"><strong>Description:</strong> {{ suggestion.details.description.get("value") }}</p>
+                <a type="button" class="cta-btn btn custom btn-primary btn-md" href="{{ suggestion.details.description.get('citation') }}" target="_blank">Learn More</a>
+                {% else %}
+                <p>No description available.</p>
                 {% endif %}
 
             </div>

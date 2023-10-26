@@ -20,8 +20,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .chosen-image {
-    max-width: 200px;  /* Limit width to 100 pixels */
-    max-height: 200px;  /* Limit height to 100 pixels */
+    max-width: 200px;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.representative-image {
+    max-width: 300px;
+    max-height: 300px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-top: 10px;

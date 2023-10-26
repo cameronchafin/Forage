@@ -43,14 +43,12 @@ def contact():
 def identify():
     if request.method == "POST":
 
-        # Check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
             print("File not found in request")
             return redirect(request.url)
         file = request.files['file']
 
-        # If the user does not select a file, the browser submits an empty file without a filename.
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
@@ -60,7 +58,6 @@ def identify():
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
 
-            # Encode image to base64
             with open(filepath, "rb") as img_file:
                 img_base64 = base64.b64encode(img_file.read()).decode("ascii")
 
@@ -78,10 +75,8 @@ def identify():
                 }
             ).json()
 
-            # You can add more processing of the response if needed
             suggestions = response.get("result", {}).get("classification", {}).get("suggestions", [])
 
-            # Pass suggestions to the result template
             return render_template('result.html', year=year, suggestions=suggestions)
 
     return render_template('identify.html', year=year)

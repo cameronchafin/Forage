@@ -24,7 +24,10 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-identify.j
         <h2 class="medium-heading">Upload a photo of your mushroom.</h2>
         <p>Choose a file, preview the image below, and hit the identify button.</p>
         <p>For best results, upload a clear photo taken in daylight conditions.</p>
-        <form action="/identify" method="post" enctype="multipart/form-data">
+        <div id="loading-animation" style="display: none;">
+            <img src="{{ url_for('static', filename='img/spinner.gif') }}" alt="Loading...">
+        </div>
+        <form action="/identify" method="post" enctype="multipart/form-data" id="form-id">
             <div class="input-group mb-3">
                 <input type="file" class="form-control" name="file" id="inputGroupFile02" onchange="displayImage(this)">
                 <button class="btn custom btn-primary" type="submit" id="button-addon2">Identify</button>
@@ -35,8 +38,9 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-identify.j
     </div>
 </div>
 
-<!-- Photo Upload Script -->
+
 <script>
+<!-- Photo Upload -->
 function displayImage(input) {
     const file = input.files[0];
     if (file) {
@@ -52,6 +56,16 @@ function displayImage(input) {
         reader.readAsDataURL(file);
     }
 }
+
+<!-- Loading Animation -->
+$(document).ready(function() {
+    $('#form-id').submit(function() {
+
+        $('#loading-animation').show();
+
+        $(this).find(':submit').prop('disabled', true);
+    });
+});
 </script>
 
 {% endblock %}
