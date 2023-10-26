@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Result
+{% endblock %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="container-fluid text-light p-5 jumbotron"
+style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg') }})">
+    <div class="jumbo-overlay"></div>
+    <div class="container p-5 d-flex align-items-center justify-content-center h-100">
+      <div class="jumbo-title text-center">
+        <h1 class="big-heading">Identification Results</h1>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
