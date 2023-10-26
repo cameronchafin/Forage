@@ -26,7 +26,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-identify.j
         <p>For best results, upload a clear photo taken in daylight conditions.</p>
         <form action="/identify" method="post" enctype="multipart/form-data">
             <div class="input-group mb-3">
-                <input type="file" class="form-control" name="image" id="inputGroupFile02" onchange="displayImage(this)">
+                <input type="file" class="form-control" name="file" id="inputGroupFile02" onchange="displayImage(this)">
                 <button class="btn custom btn-primary" type="submit" id="button-addon2">Identify</button>
             </div>
         </form>

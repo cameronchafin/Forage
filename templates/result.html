@@ -17,4 +17,49 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
     </div>
 </div>
 
+<!-- Results -->
+<div class="container my-5">
+    {% for suggestion in suggestions %}
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <!-- Representative Image -->
+                {% if suggestion.similar_images %}
+                <img src="{{ suggestion.similar_images[0].url }}" alt="{{ suggestion.name }}" class="card-img-top mb-4">
+                {% else %}
+                <p>No representative image available.</p>
+                {% endif %}
+
+                <!-- Scientific Name -->
+                <h5 class="card-title">{{ suggestion.name }}</h5>
+
+                <!-- Probability -->
+                <p class="card-text"><strong>Probability:</strong> {{ (suggestion.probability * 100)|round(1) }}%</p>
+
+                <!-- Common Names -->
+                {% if suggestion.details.common_names %}
+                <p class="card-text"><strong>Common Names:</strong> {{ suggestion.details.common_names|join(", ") }}</p>
+                {% else %}
+                <p>No common names available.</p>
+                {% endif %}
+
+                <!-- Description -->
+                {% if suggestion.details.description %}
+                <p class="card-text"><strong>Description:</strong> {{ suggestion.details.description }}</p>
+                {% else %}
+                <p>No description available.</p>
+                {% endif %}
+
+                <!-- Edibility -->
+                {% if suggestion.details.edibility %}
+                <p class="card-text"><strong>Edibility:</strong> {{ suggestion.details.edibility }}</p>
+                {% else %}
+                <p>Edibility information not available.</p>
+                {% endif %}
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
