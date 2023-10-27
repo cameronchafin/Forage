@@ -6,6 +6,19 @@ Result
 
 {% block content %}
 
+<!-- Alert -->
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <h4 class="alert-heading">Disclaimer</h4>
+  <hr>
+    <p><strong>Potential Inaccuracy:</strong> This app provides suggestions based on the provided image and may not
+        always be accurate. Always consult with experts or trusted field guides before consuming any foraged items.</p>
+    <p><strong>No Liability:</strong> We are not responsible for any harm, injury, or adverse effects resulting from the
+        use of this app. Use it at your own risk.</p>
+    <p><strong>Variability in Nature:</strong> Mushrooms can vary in appearance due to environmental factors, age, and
+        other conditions. Always be cautious.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <!-- Banner -->
 <div class="container-fluid text-light p-5 jumbotron"
 style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg') }})">
@@ -63,4 +76,50 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
     {% endfor %}
 </div>
 
+<!-- Safety Tips -->
+<div class="dark container-fluid bg-dark text-light p-5">
+    <div class="container cta text-center">
+        <h2 class="medium-heading">Foraging Safety Guidelines</h2>
+        <p>Safety is important when foraging. Click below to learn more about important considerations for a safe
+            foraging experience.</p>
+        <a type="button" class="cta-btn btn custom btn-light btn-lg" data-toggle="modal" data-target="#safetyModal">Safety Tips</a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="safetyModal" tabindex="-1" role="dialog" aria-labelledby="safetyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="safetyModalLabel">Foraging Safety Guidelines</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Safety Guidelines:</h6>
+        <ul>
+        <li><strong>Always Be Cautious:</strong> If you're unsure about the edibility of a mushroom, it's better to err
+            on the side of caution. Never consume anything you're uncertain about.</li>
+        <li><strong>Educate Yourself:</strong> Read books, attend workshops, and join mycology groups or clubs to gain
+            knowledge from experienced foragers.</li>
+        <li><strong>Observe Before Touching:</strong> Some mushrooms can cause skin irritations. Always wear gloves if
+            you're not sure about what you're handling.</li>
+        <li><strong>Forage with a Companion:</strong> It's safer and more enjoyable to forage with a buddy. If something
+            goes wrong, having someone with you can be life-saving.</li>
+        <li><strong>Note the Location:</strong> Some mushrooms only grow near specific types of trees or in particular
+            soils. Noting the surroundings can help with identification.</li>
+        <li><strong>Cross-Check:</strong> Don't rely on a single source for mushroom identification. Always cross-check
+            with multiple trusted sources.</li>
+        <li><strong>Be Aware of Look-alikes:</strong> Many edible mushrooms have toxic look-alikes. Always be thorough
+            in your identification process.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn custom btn-secondary" data-dismiss="modal">Close</button>
+          <a class="btn custom-outline btn-proj"
+             href="https://a-z-animals.com/blog/a-beginners-guide-to-mushroom-foraging/"
+             target="_blank">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
