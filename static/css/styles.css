@@ -9,6 +9,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+a {
+    color: #212529;
+    text-decoration: none;
+}
+
+a.muted {
+    color: #6c757d;
+}
+
+a:hover {
+    color: #59a96a;
+    text-decoration: none;
+}
+
 .feature-icon {
     padding-bottom: 20px;
     color: #59a96a;

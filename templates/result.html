@@ -76,6 +76,22 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
     {% endfor %}
 </div>
 
+<!-- Options -->
+<div class="container my-5">
+    <div class="row my-5">
+        <div class="col-lg-6 feature-box text-center my-5">
+            <i class="fa-solid fa-house fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('index') }}">Home</a></h3>
+            <p class="subheading">Head back to the homepage.</p>
+        </div>
+        <div class="col-lg-6 feature-box text-center my-5">
+            <i class="fa-solid fa-microscope fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('identify') }}">Identify</a></h3>
+            <p class="subheading">Identify another mushroom.</p>
+        </div>
+    </div>
+</div>
+
 <!-- Safety Tips -->
 <div class="dark container-fluid bg-dark text-light p-5">
     <div class="container cta text-center">
@@ -122,4 +138,5 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
     </div>
   </div>
 </div>
+
 {% endblock %}
