@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Registration Form -->
+    <form action="/register" method="post" class="user-form py-5">
+
+        <h3>Create Account</h3>
+
+        <div class="form-group pb-3">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required class="form-control" placeholder="Your email">
+        </div>
+
+        <div class="form-group pb-3">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required class="form-control" placeholder="Enter username">
+        </div>
+
+        <div class="form-group pb-3">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required class="form-control"
+                   placeholder="Enter password">
+        </div>
+
+        <button type="submit" class="btn custom">Register</button>
+    </form>
+</div>
+
+{% endblock %}

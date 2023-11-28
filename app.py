@@ -87,5 +87,21 @@ def result():
     return render_template('result.html', year=year)
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        # Logic to send data to microservice
+        pass
+    return render_template('register.html')
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Logic to authenticate user using the microservice
+        pass
+    return render_template('login.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)

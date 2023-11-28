@@ -70,6 +70,15 @@ a:hover {
     font-size: 1.1rem;
 }
 
+
+/* Forms */
+.user-form {
+    max-width: 300px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Jumbotron */
 
 .jumbotron {
