@@ -90,16 +90,30 @@ def result():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        # Logic to send data to microservice
-        pass
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        response = requests.post('http://localhost:5001/register', json={'username': username, 'email': email, 'password': password})
+        if response.status_code == 201:
+            return redirect(url_for('login'))
+        else:
+            error_message = response.json().get('message', 'An error occurred during registration.')
+            flash(error_message)
+            return render_template('register.html')
     return render_template('register.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Logic to authenticate user using the microservice
-        pass
+        username = request.form['username']
+        password = request.form['password']
+        response = requests.post('http://localhost:5001/login', json={'username': username, 'password': password})
+        if response.status_code == 200:
+            session['token'] = response.json()['token']
+            return redirect(url_for('index'))
+        else:
+            flash('Invalid username or password. Please try again.')
     return render_template('login.html')
 
 
