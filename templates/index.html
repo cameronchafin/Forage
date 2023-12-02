@@ -13,6 +13,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
         <!-- Buttons  -->
         {% if 'username' in session %}
             <a href="{{ url_for('identify') }}" class="cta-btn btn custom-solid btn-primary btn-md">Identify</a>
+            <a href="{{ url_for('my_collection') }}" class="cta-btn btn custom-outline-white btn-md">My Collection</a>
         {% else %}
             <a type="button" class="cta-btn btn custom-solid btn-primary btn-md" href="{{ url_for('register') }}">Sign Up</a>
             <a type="button" class="cta-btn btn custom-outline-white" href="{{ url_for('login') }}">Log In</a>

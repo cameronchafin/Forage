@@ -4,6 +4,7 @@ import requests
 import base64
 import os
 from werkzeug.utils import secure_filename
+from models import db, IdentifiedMushroom
 
 
 API_URL = "https://mushroom.kindwise.com/api/v1/identification"
@@ -18,6 +19,10 @@ UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app.config['UPLOAD_FOLDER'] = "uploads"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///collections.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
 
 
 def allowed_file(filename):
@@ -77,14 +82,64 @@ def identify():
 
             suggestions = response.get("result", {}).get("classification", {}).get("suggestions", [])
 
+            # Check if user is logged in before saving
+            if 'username' in session:
+                save_identified_mushrooms(suggestions, session['username'])
+
             return render_template('result.html', year=year, suggestions=suggestions)
 
     return render_template('identify.html', year=year)
 
 
+def save_identified_mushrooms(suggestions, username):
+    for suggestion in suggestions:
+
+        common_names_list = suggestion.get('details', {}).get('common_names', [])
+        if not isinstance(common_names_list, list):
+            common_names_list = [common_names_list] if common_names_list else []
+        common_names = ', '.join([name for name in common_names_list if isinstance(name, str)])
+
+        new_mushroom = IdentifiedMushroom(
+            username=username,
+            scientific_name=suggestion.get('name', 'Unknown'),
+            probability=suggestion.get('probability', 0),
+            common_names=common_names,
+            edibility=suggestion.get('details', {}).get('edibility', 'Unknown'),
+            description=suggestion.get('details', {}).get('description', {}).get('value', ''),
+            representative_image_url=suggestion.get('similar_images', [{}])[0].get('url', ''),
+            more_info_url=suggestion.get('details', {}).get('description', {}).get('citation', ''),
+            date_saved=datetime.date.today()
+        )
+        db.session.add(new_mushroom)
+    db.session.commit()
+
+
 @app.route("/result")
 def result():
     return render_template('result.html', year=year)
+
+
+@app.route('/my_collection')
+def my_collection():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    user_mushrooms = IdentifiedMushroom.query.filter_by(username=session['username']).all()
+    return render_template('my_collection.html', mushrooms=user_mushrooms)
+
+
+@app.route('/remove_mushroom/<int:mushroom_id>', methods=['POST'])
+def remove_mushroom(mushroom_id):
+    if 'username' not in session:
+        return redirect(url_for('login'))
+
+    mushroom = IdentifiedMushroom.query.get(mushroom_id)
+    if mushroom and mushroom.username == session['username']:
+        db.session.delete(mushroom)
+        db.session.commit()
+        flash('Mushroom removed from your collection.')
+
+    return redirect(url_for('my_collection'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -128,4 +183,7 @@ def logout():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
+
