@@ -6,26 +6,28 @@ Login
 
 {% block content %}
 
-<div class="container">
+<div class="container py-5">
 
-    <!-- Login Form -->
-    <form action="/login" method="post" class="user-form py-5">
+        <h3 class="text-center">Log In</h3>
+        <p class="text-center">
+            You don't have a password? Then please
+            <a href="register" style="text-decoration: underline;"> sign up.</a>
+        </p>
 
-        <h3>Login</h3>
+        <!-- Login Form -->
+        <form action="/login" method="post" class="user-form">
+            <div class="form-group pb-3">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required class="form-control" placeholder="Enter username">
+            </div>
 
-        <div class="form-group pb-3">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required class="form-control" placeholder="Enter username">
-        </div>
+            <div class="form-group pb-3">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required class="form-control" placeholder="Enter password">
+            </div>
 
-        <div class="form-group pb-3">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required class="form-control" placeholder="Enter password">
-        </div>
-
-        <button type="submit" class="btn custom">Login</button>
-    </form>
-
+            <button type="submit" class="btn custom-solid">Log In</button>
+        </form>
 </div>
 
 {% endblock %}

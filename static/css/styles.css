@@ -49,6 +49,12 @@ a:hover {
     margin-top: 10px;
 }
 
+.tabs {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-color: #f3f7fd;
+}
+
 /* Headings */
 
 .big-heading {
@@ -111,12 +117,16 @@ a:hover {
 
 /* Navbar */
 
+.navbar-custom {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .button {
     color: #59a96a;
 }
 
 .nav-link {
-    font-size: 0.9rem;
+    font-size: 1 rem;
 }
 
 .nav-link:hover {
@@ -167,4 +177,80 @@ a:hover {
 .custom-outline:active {
     box-shadow: none;
     -webkit-box-shadow: none
+}
+
+/* New Buttons */
+
+.custom-white {
+    border-color: #f3f7fd;
+    background-color: #f3f7fd;
+    color: #59a96a;
+    border-radius: 2rem;
+}
+
+.custom-white:hover, .custom-white:focus {
+    border-color: #f3f7fd;
+    background-color: #59a96a;
+    color: #f3f7fd;
+    border-radius: 2rem;
+}
+
+.custom-solid {
+    border-color: #59a96a;
+    background-color: #59a96a;
+    color: #fff;
+    border-radius: 2rem;
+}
+
+.custom-solid:hover, .custom-white:focus {
+    border-color: #59a96a;
+    background-color: #fff;
+    color: #59a96a;
+    border-radius: 2rem;
+}
+
+.custom-outline-green {
+    border-color: #59a96a;
+    background-color: #transparent;
+    color: #59a96a;
+    border-radius: 2rem;
+}
+
+.custom-outline-green:hover, .custom-green:focus {
+    border-color: #59a96a;
+    background-color: #59a96a;
+    color: #fff;
+    border-radius: 2rem;
+}
+
+.custom-outline-white {
+    border: 0.125rem solid #f3f7fd;
+    background-color: #transparent;
+    color: #f3f7fd;
+    border-radius: 2rem;
+}
+
+.custom-outline-white:hover, .custom-white:focus {
+    border-color: #f3f7fd;
+    background-color: #f3f7fd;
+    color: #59a96a;
+    border-radius: 2rem;
+}
+
+#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #59a96a;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }

@@ -6,12 +6,16 @@ Register
 
 {% block content %}
 
-<div class="container">
+<div class="container py-5">
+
+    <h3 class="text-center">Create Account</h3>
+    <p class="text-center">
+        Fill out the form below to sign up for Forage. Already signed up? Then just
+        <a href="login" style="text-decoration: underline;"> log in.</a>
+    </p>
 
     <!-- Registration Form -->
-    <form action="/register" method="post" class="user-form py-5">
-
-        <h3>Create Account</h3>
+    <form action="/register" method="post" class="user-form">
 
         <div class="form-group pb-3">
             <label for="email">Email:</label>
@@ -29,7 +33,7 @@ Register
                    placeholder="Enter password">
         </div>
 
-        <button type="submit" class="btn custom">Register</button>
+        <button type="submit" class="btn custom-solid">Register</button>
     </form>
 </div>
 
