@@ -11,59 +11,67 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
         <p class="subheading">Identify mushrooms and learn about their edibility.</p>
 
         <!-- Buttons  -->
-        <a type="button" class="cta-btn btn custom-solid btn-primary btn-md" href="{{ url_for('identify') }}">Identify</a>
-        <a type="button" class="cta-btn btn custom-outline-white" href="{{ url_for('about') }}">Learn more</a>
+        {% if 'username' in session %}
+            <a href="{{ url_for('identify') }}" class="cta-btn btn custom-solid btn-primary btn-md">Identify</a>
+        {% else %}
+            <a type="button" class="cta-btn btn custom-solid btn-primary btn-md" href="{{ url_for('register') }}">Sign Up</a>
+            <a type="button" class="cta-btn btn custom-outline-white" href="{{ url_for('login') }}">Log In</a>
+        {% endif %}
+
       </div>
     </div>
 </div>
 
 <!-- About -->
-<div class="container my-5">
-    <div class="feature-title text-center">
-        <h2 class="medium-heading">AI-powered mushroom photo identification for curious foragers</h2>
-    </div>
-    <div class="row my-5">
-        <div class="col-lg-4 feature-box text-center my-5">
-            <i class="fa-solid fa-microscope fa-3x feature-icon"></i>
-            <h2>Identification</h2>
-            <p class="subheading">Quickly identify mushrooms by uploading a picture. Our advanced AI will do the heavy
-                lifting for you, providing results in seconds.</p>
+<div id="about">
+    <div class="container my-5">
+        <div class="feature-title text-center">
+            <h2 class="medium-heading">AI-powered mushroom photo identification for curious foragers</h2>
         </div>
-        <div class="col-lg-4 feature-box text-center my-5">
-            <i class="fa-solid fa-utensils fa-3x feature-icon"></i>
-            <h2>Edible Insights</h2>
-            <p class="subheading">Discover whether a mushroom is safe to eat. Get detailed information about its
-                nutritional benefits, culinary uses, and more.</p>
-        </div>
-        <div class="col-lg-4 feature-box text-center my-5">
-            <i class="fa-solid fa-clock-rotate-left fa-3x feature-icon"></i>
-            <h2>History View</h2>
-            <p class="subheading">Track all your previous identifications without the need for an account. Easily
-                revisit past results and learn over time.</p>
+        <div class="row my-5">
+            <div class="col-lg-4 feature-box text-center my-5">
+                <i class="fa-solid fa-microscope fa-3x feature-icon"></i>
+                <h2>Identification</h2>
+                <p class="subheading">Quickly identify mushrooms by uploading a picture. Our advanced AI will do the heavy
+                    lifting for you, providing results in seconds.</p>
+            </div>
+            <div class="col-lg-4 feature-box text-center my-5">
+                <i class="fa-solid fa-utensils fa-3x feature-icon"></i>
+                <h2>Edible Insights</h2>
+                <p class="subheading">Discover whether a mushroom is safe to eat. Get detailed information about its
+                    nutritional benefits, culinary uses, and more.</p>
+            </div>
+            <div class="col-lg-4 feature-box text-center my-5">
+                <i class="fa-solid fa-clock-rotate-left fa-3x feature-icon"></i>
+                <h2>History View</h2>
+                <p class="subheading">Track all your previous identifications without the need for an account. Easily
+                    revisit past results and learn over time.</p>
+            </div>
         </div>
     </div>
 </div>
-
 <!-- Features -->
-<h4 class="text-center">Features</h4>
-<div class="container col-xl-10 col-xxl-8 px-4">
-    <div class="row align-items-center g-lg-5 py-5">
-        <!-- Text Column -->
-        <div class="col-lg-7 text-center text-lg-start">
-            <h2>Photo Identification</h2>
-            <p>Forage's photo identification allows users to quickly and accurately identify various mushroom
-                species from photos. This innovative feature uses advanced image recognition technology to analyze
-                mushroom characteristics.</p>
-            <ul>
-                <li>Upload photos of mushrooms and receive instant species identification.</li>
-                <li>Utilizes advanced AI algorithms for accurate results.</li>
-                <li>Helpful for both amateur and seasoned foragers alike.</li>
-                <li>Contributes to a growing database of mushroom images and information.</li>
-            </ul>
-        </div>
-        <!-- Image Column -->
-        <div class="col-lg-5 text-center">
-            <img src="{{ url_for('static', filename='img/brown-mushroom.jpg') }}" alt="Photo Identification Feature" class="img-fluid">
+<div id="features">
+    <h4 class="text-center">Features</h4>
+    <div class="container col-xl-10 col-xxl-8 px-4">
+        <div class="row align-items-center g-lg-5 py-5">
+            <!-- Text Column -->
+            <div class="col-lg-7 text-center text-lg-start">
+                <h2>Photo Identification</h2>
+                <p>Forage's photo identification allows users to quickly and accurately identify various mushroom
+                    species from photos. This innovative feature uses advanced image recognition technology to analyze
+                    mushroom characteristics.</p>
+                <ul>
+                    <li>Upload photos of mushrooms and receive instant species identification.</li>
+                    <li>Utilizes advanced AI algorithms for accurate results.</li>
+                    <li>Helpful for both amateur and seasoned foragers alike.</li>
+                    <li>Contributes to a growing database of mushroom images and information.</li>
+                </ul>
+            </div>
+            <!-- Image Column -->
+            <div class="col-lg-5 text-center">
+                <img src="{{ url_for('static', filename='img/brown-mushroom.jpg') }}" alt="Photo Identification Feature" class="img-fluid">
+            </div>
         </div>
     </div>
 </div>

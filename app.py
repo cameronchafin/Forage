@@ -109,12 +109,22 @@ def login():
         username = request.form['username']
         password = request.form['password']
         response = requests.post('http://localhost:5001/login', json={'username': username, 'password': password})
+
         if response.status_code == 200:
             session['token'] = response.json()['token']
+            session['username'] = username
             return redirect(url_for('index'))
         else:
             flash('Invalid username or password. Please try again.')
+
     return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('token', None)
+    session.pop('username', None)  # Clear the username or identifier
+    return redirect(url_for('index'))
 
 
 if __name__ == "__main__":

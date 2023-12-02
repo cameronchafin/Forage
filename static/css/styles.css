@@ -146,8 +146,8 @@ a:hover {
 }
 
 .custom:hover, .custom:focus {
-    color: #fff;
-    background-color: #384d48;
+    color: #59a96a;
+    background-color: #fff;
     border-color: #59a96a;
     box-shadow: none;
     -webkit-box-shadow: none

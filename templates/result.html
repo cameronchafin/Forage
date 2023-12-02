@@ -66,7 +66,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
                 <!-- Description -->
                 {% if suggestion.details.description %}
                 <p class="card-text"><strong>Description:</strong> {{ suggestion.details.description.get("value") }}</p>
-                <a type="button" class="cta-btn btn custom btn-primary btn-md" href="{{ suggestion.details.description.get('citation') }}" target="_blank">Learn More</a>
+                <a type="button" class="cta-btn btn custom-solid btn-primary btn-md" href="{{ suggestion.details.description.get('citation') }}" target="_blank">Learn More</a>
                 {% else %}
                 <p>No description available.</p>
                 {% endif %}
@@ -98,7 +98,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
         <h2 class="medium-heading">Foraging Safety Guidelines</h2>
         <p>Safety is important when foraging. Click below to learn more about important considerations for a safe
             foraging experience.</p>
-        <a type="button" class="cta-btn btn custom btn-light btn-lg" data-toggle="modal" data-target="#safetyModal">Safety Tips</a>
+        <a type="button" class="cta-btn btn custom-solid btn-light btn-lg" data-toggle="modal" data-target="#safetyModal">Safety Tips</a>
     </div>
 </div>
 

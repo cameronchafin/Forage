@@ -47,15 +47,31 @@
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <i class="button fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
-                <a class="nav-link {% if request.path == url_for('about') %}active{% endif %}" href="{{ url_for('about') }}">About</a>
-                <a class="nav-link {% if request.path == url_for('identify') %}active{% endif %}" href="{{ url_for('identify') }}">Identify</a>
-                <a class="nav-link {% if request.path == url_for('contact') %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
-                <a type="button" class="btn custom-outline-green" href="{{ url_for('login') }}">Log In</a>
-              </div>
-            </div>
+
+            <!-- If user is logged in -->
+            {% if 'username' in session %}
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link" href="{{ url_for('index') }}#about">About</a>
+                    <a class="nav-link" href="{{ url_for('index') }}#features">Features</a>
+                    <a class="nav-link {% if request.path == url_for('identify') %}active{% endif %}" href="{{ url_for('identify') }}">Identify</a>
+                    <a type="button" class="btn custom-outline-green" href="{{ url_for('logout') }}">Log Out</a>
+                  </div>
+                </div>
+
+            <!-- If user is logged out -->
+            {% else %}
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link {% if request.path == url_for('index') %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link" href="{{ url_for('index') }}#about">About</a>
+                    <a class="nav-link" href="{{ url_for('index') }}#features">Features</a>
+                    <a type="button" class="btn custom-outline-green" href="{{ url_for('login') }}">Log In</a>
+                  </div>
+                </div>
+            {% endif %}
+
           </div>
         </nav>
 
