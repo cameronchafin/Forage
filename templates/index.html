@@ -88,6 +88,14 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
     </div>
 </div>
 
+<!-- Call to action -->
+<div class="dark container-fluid bg-dark text-light p-5">
+    <div class="container cta text-center">
+        <h2 class="medium-heading">Sign up to get started now.</h2>
+        <a type="button" class="cta-btn btn custom-solid btn-light btn-lg" href="{{ url_for('register') }}">Sign Up</a>
+    </div>
+</div>
+
 <!-- Scroll to Top  -->
 <button onclick="topFunction()" id="scrollBtn" title="Go to top">⌃</button>
 <script>
