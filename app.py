@@ -46,6 +46,10 @@ def contact():
 
 @app.route("/identify", methods=["GET", "POST"])
 def identify():
+    if 'username' not in session:
+        flash('You need to be logged in to access this page.')
+        return redirect(url_for('login'))
+
     if request.method == "POST":
 
         if 'file' not in request.files:
@@ -116,12 +120,17 @@ def save_identified_mushrooms(suggestions, username):
 
 @app.route("/result")
 def result():
+    if 'username' not in session:
+        flash('You need to be logged in to access this page.')
+        return redirect(url_for('login'))
+
     return render_template('result.html', year=year)
 
 
 @app.route('/my_collection')
 def my_collection():
     if 'username' not in session:
+        flash('You need to be logged in to access this page.')
         return redirect(url_for('login'))
 
     user_mushrooms = IdentifiedMushroom.query.filter_by(username=session['username']).all()
