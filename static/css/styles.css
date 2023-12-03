@@ -134,6 +134,23 @@ a:hover {
     color: #59a96a;
 }
 
+/* Pseudo Elements */
+.home_about::before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
+.home_features::before {
+    content: "";
+    display: block;
+    height: 50px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
 /* Buttons */
 
 .custom {
