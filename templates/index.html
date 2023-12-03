@@ -33,8 +33,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
             <div class="col-lg-4 feature-box text-center my-5">
                 <i class="fa-solid fa-microscope fa-3x feature-icon"></i>
                 <h2>Identification</h2>
-                <p class="subheading">Quickly identify mushrooms by uploading a picture. Our advanced AI will do the heavy
-                    lifting for you, providing results in seconds.</p>
+                <p class="subheading">Quickly identify mushrooms by uploading a picture. Our AI will do the work for you, providing results in seconds.</p>
             </div>
             <div class="col-lg-4 feature-box text-center my-5">
                 <i class="fa-solid fa-utensils fa-3x feature-icon"></i>
@@ -54,39 +53,56 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
 <!-- Features -->
 <div id="features">
     <h4 class="text-center">Features</h4>
-    <div class="container col-xl-10 col-xxl-8 px-4">
-        <div class="row align-items-center g-lg-5 py-5">
-            <!-- Text Column -->
-            <div class="col-lg-7 text-center text-lg-start">
-                <h2>Photo Identification</h2>
-                <p>Forage's photo identification allows users to quickly and accurately identify various mushroom
-                    species from photos. This innovative feature uses advanced image recognition technology to analyze
-                    mushroom characteristics.</p>
-                <ul>
-                    <li>Upload photos of mushrooms and receive instant species identification.</li>
-                    <li>Utilizes advanced AI algorithms for accurate results.</li>
-                    <li>Helpful for both amateur and seasoned foragers alike.</li>
-                    <li>Contributes to a growing database of mushroom images and information.</li>
-                </ul>
-            </div>
-            <!-- Image Column -->
-            <div class="col-lg-5 text-center">
-                <img src="{{ url_for('static', filename='img/brown-mushroom.jpg') }}" alt="Photo Identification Feature" class="img-fluid">
-            </div>
+</div>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <!-- Heading and Description -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h2>Photo Identification</h2>
+            <p>
+                Forage's photo identification allows users to quickly and accurately identify various mushroom
+                species from photos. This innovative feature uses advanced image recognition technology to analyze
+                mushroom characteristics.
+            </p>
+        </div>
+    </div>
+
+    <!-- Image and Bullet Points Row -->
+    <div class="row align-items-center g-lg-5 py-3">
+        <!-- Image Column -->
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='img/brown-mushroom.jpg') }}" alt="Photo Identification Feature" class="img-fluid">
+        </div>
+
+        <!-- Bullet Points Column -->
+        <div class="col-md-6">
+            <ul>
+                <li>Upload photos of mushrooms and receive instant species identification.</li>
+                <li>Utilizes advanced AI algorithms for accurate results.</li>
+                <li>Helpful for both amateur and seasoned foragers alike.</li>
+                <li>Contributes to a growing database of mushroom images and information.</li>
+            </ul>
         </div>
     </div>
 </div>
 
-<div class="container col-xl-10 col-xxl-8 px-4">
-    <div class="row align-items-center g-lg-5 py-5">
-        <!-- Image Column -->
-        <div class="col-lg-5 text-center">
-            <img src="{{ url_for('static', filename='img/tagged-mushroom.jpg') }}" alt="Detailed Results Breakdown" class="img-fluid">
-        </div>
-        <!-- Text Column -->
-        <div class="col-lg-7 text-center text-lg-start">
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <!-- Heading and Description -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
             <h2>Detailed Results Breakdown</h2>
-            <p>Forage's Detailed Results Breakdown offers an in-depth analysis of each identified mushroom species. This feature aims to educate users about their findings, enriching their foraging experience.</p>
+            <p>
+                Forage's Detailed Results Breakdown offers an in-depth analysis of each identified mushroom species. This feature aims to educate users about their findings, enriching their foraging experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- Image and Bullet Points Row -->
+    <div class="row align-items-center g-lg-5 py-3">
+        <!-- Bullet Points Column -->
+        <div class="col-md-6">
             <ul>
                 <li>Provides comprehensive information about the identified mushroom species.</li>
                 <li>Includes details on edibility, habitat, and similar species for comparison.</li>
@@ -94,8 +110,45 @@ style="background-image: url({{ url_for('static', filename='img/bg/bg-home.jpg')
                 <li>Links to additional resources for further learning and exploration.</li>
             </ul>
         </div>
+
+        <!-- Image Column -->
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='img/tagged-mushroom.jpg') }}" alt="Detailed Results Breakdown" class="img-fluid">
+        </div>
     </div>
 </div>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <!-- Heading and Description-->
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h2>My Collection</h2>
+            <p>
+                Keep track of all your mushroom identifications with the "My Collection" feature.
+                This personalized gallery stores every mushroom you've identified, allowing you to review and reflect on your foraging history.
+            </p>
+        </div>
+    </div>
+
+    <!-- Image and Bullet Points Row -->
+    <div class="row align-items-center g-lg-5 py-3">
+        <!-- Image Column -->
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='img/collection.jpg') }}" alt="My Collection Feature" class="img-fluid">
+        </div>
+
+        <!-- Bullet Points Column -->
+        <div class="col-md-6">
+            <ul>
+                <li>View your identified mushrooms anytime, anywhere.</li>
+                <li>Manage your collection by saving or removing entries.</li>
+                <li>Revisit detailed information about each mushroom, including common names, edibility, and more.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Call to action -->
 <div class="dark container-fluid bg-dark text-light p-5">
