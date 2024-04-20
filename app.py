@@ -5,21 +5,25 @@ import base64
 import os
 from werkzeug.utils import secure_filename
 from models import db, IdentifiedMushroom
+from dotenv import load_dotenv
 
 
-API_URL = "https://mushroom.kindwise.com/api/v1/identification"
-API_KEY = "lLPXIjX93GaPI6BgVBVgFjmgSFCJp3K6B6rcXKNgvWkFgUmhXE"
+# Load environment variables
+load_dotenv()
+
+API_URL = os.getenv('API_URL', 'default_api_url')
+API_KEY = os.getenv('API_KEY', 'default_api_key')
 API_URL_WITH_DETAILS = f"{API_URL}?details=common_names,url,description,edibility,image"
 
 app = Flask(__name__)
-app.secret_key = "secret_key"
+app.secret_key = os.getenv('SECRET_KEY', 'default_secret_key')
 year = datetime.date.today().year
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
-app.config['UPLOAD_FOLDER'] = "uploads"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///collections.db'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 'sqlite:///collections.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
