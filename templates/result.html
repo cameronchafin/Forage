@@ -78,15 +78,20 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
 <!-- Options -->
 <div class="container my-5">
     <div class="row my-5">
-        <div class="col-lg-6 feature-box text-center my-5">
+        <div class="col-lg-4 feature-box text-center my-5">
             <i class="fa-solid fa-house fa-3x feature-icon"></i>
             <h3 class="medium-heading"><a href="{{ url_for('index') }}">Home</a></h3>
             <p class="subheading">Head back to the homepage.</p>
         </div>
-        <div class="col-lg-6 feature-box text-center my-5">
+        <div class="col-lg-4 feature-box text-center my-5">
             <i class="fa-solid fa-microscope fa-3x feature-icon"></i>
             <h3 class="medium-heading"><a href="{{ url_for('identify') }}">Identify</a></h3>
             <p class="subheading">Identify another mushroom.</p>
+        </div>
+        <div class="col-lg-4 feature-box text-center my-5">
+            <i class="fa-solid fa-grip fa-3x feature-icon"></i>
+            <h3 class="medium-heading"><a href="{{ url_for('my_collection') }}">My Collection</a></h3>
+            <p class="subheading">View my mushrooms.</p>
         </div>
     </div>
 </div>
@@ -132,7 +137,7 @@ style="background-image: url({{ url_for('static', filename='img/bg/result-bg.jpg
           <a class="btn custom-solid btn-proj"
              href="https://a-z-animals.com/blog/a-beginners-guide-to-mushroom-foraging/"
              target="_blank">Learn More</a>
-          <button type="button" class="btn custom-outline-green btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn custom-outline-green" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
