@@ -1,5 +1,6 @@
 # Forage: Mushroom Identification App
 
+<img src="static/img/home.png" alt="Homepage Screenshot" width="50%">
 Forage is an innovative web application designed for mushroom enthusiasts, foragers, and nature explorers. 
 It simplifies the process of identifying various mushroom species using advanced image recognition technology. 
 This app aims to provide a seamless and educational experience for its users, enhancing their knowledge about mushrooms and foraging.
@@ -10,29 +11,29 @@ This app aims to provide a seamless and educational experience for its users, en
 Utilizing the mushroom.id photo regocnition API, Forage allows users to upload photos of mushrooms for instant identification. 
 This feature helps in quickly understanding the species and characteristics of the mushrooms encountered during foraging.
 
-![Photo Identification Screenshot](path_to_photo_identification_screenshot)
+<img src="static/img/identify.png" alt="Photo Identification Screenshot" width="50%">
 
 ### 📚 Detailed Results Breakdown
 Each identification comes with a detailed breakdown, offering valuable information about the mushroom species, including edibility, habitat, common names, and more. 
 This enriches the user's understanding and ensures a safe foraging experience.
 
-![Detailed Results Screenshot](path_to_detailed_results_screenshot)
+<img src="static/img/results.png" alt="Results Screenshot" width="50%">
 
 ### 🌐 My Collection
 Users can save their identified mushrooms in 'My Collection', a personal digital herbarium. 
 This feature allows users to review their past findings, track progress, and revisit the details of each identified species.
 
-![My Collection Screenshot](path_to_my_collection_screenshot)
+<img src="static/img/mycollection.png" alt="My Collection Screenshot" width="50%">
 
 ## Technology Stack
 
 Forage is built using a combination of modern and robust technologies, ensuring a high-quality user experience:
 
-- **Frontend:** Developed with [Bootstrap](link_to_bootstrap), the frontend of Forage is responsive and user-friendly, providing an intuitive interface that adapts to various devices and screen sizes.
+- **Frontend:** Developed with Bootstrap, the frontend of Forage is responsive and user-friendly, providing an intuitive interface that adapts to various devices and screen sizes.
 
-- **Backend:** Powered by [Flask](link_to_flask), Forage's backend handles image processing, data storage, and API interactions seamlessly.
+- **Backend:** Powered by Flask, Forage's backend handles image processing, data storage, and API interactions seamlessly.
 
-- **Database:** Utilizes [SQLite](link_to_sqlite) for efficient data storage and retrieval, ensuring quick access to users' collection and identification history.
+- **Database:** Utilizes SQLite for efficient data storage and retrieval, ensuring quick access to users' collection and identification history.
 
 - **Image Recognition:** Integrates Kindwise's mushroom.id API for quick and accurate photo identification for over 3,100 species of fungi.
 
